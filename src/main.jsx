@@ -13,12 +13,15 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement: <ErrorPage></ErrorPage>
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "contacts/:contactId",
+        element: <Contact></Contact>,
+      },
+    ],
   },
-  {
-    path: "contacts/:contactId",
-    element: <Contact></Contact>,
-  },
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
